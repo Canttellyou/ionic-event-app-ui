@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true" color="dark">
+  <swiper-container #onboarding [modules]="swiperModules" [pagination]="{clickable: true}" [keyboard]="true"
+    autoplay="true">
+    @for(screen of onboardingScreens; track $index) {
+    <swiper-slide>
+      <div
+        [ngStyle]="{'background-image' : 'url(assets/onboarding_screens/' + screen?.image + ')', 'display': 'flex', 'flex-direction':'column', 'justify-content':'end','padding':'0.5rem 1.5rem'}">
+      </div>
+    </swiper-slide>
+    }
+  </swiper-container>
+
+  <!-- Button positioned absolutely -->
+  <ion-button expand="block" shape="round" color="primary" size="large" [strong]="true" routerLink="/home"
+    class="get-started-btn">
+    <ion-text>Get Started</ion-text>
+  </ion-button>
+</ion-content>
+
+<!-- <ion-footer class="ion-no-border">
+    <ion-toolbar>
+   
+
+    </ion-toolbar>
+  </ion-footer> -->
